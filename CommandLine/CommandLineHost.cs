@@ -28,7 +28,7 @@ namespace CommandLine
             _commandLineApp = new CommandLineApplication(_allowUnexpectedArgs);
             
             _startup.ConfigureServices(_services);
-            _startup.Configure(new ApplicationBuilder(_serviceProvider, _commandLineApp));
+            _startup.Configure(new ApplicationBuilder(_services.BuildServiceProvider(), _commandLineApp));
         }
         
         public int Run(string[] args)
