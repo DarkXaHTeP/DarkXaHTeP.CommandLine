@@ -1,11 +1,10 @@
-﻿using Microsoft.Extensions.CommandLineUtils;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace CommandLine
 {
     public interface IStartup
     {
-        void Configure(CommandLineApplication app);
+        void Configure(IApplicationBuilder app);
         void ConfigureServices(IServiceCollection services);
     }
 }
