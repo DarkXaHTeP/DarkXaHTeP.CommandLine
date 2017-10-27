@@ -10,7 +10,7 @@ namespace CommandLine
         ICommandLineHostBuilder ConfigureAppConfiguration(Action<CommandLineHostBuilderContext, IConfigurationBuilder> configureDelegate);
         ICommandLineHostBuilder ConfigureServices(Action<IServiceCollection> configureServices);
         ICommandLineHostBuilder ConfigureServices(Action<CommandLineHostBuilderContext, IServiceCollection> configureServices);
-        ICommandLineHostBuilder UseStartup<TStartup>() where TStartup : class, IStartup;
+        ICommandLineHostBuilder UseStartup<TStartup>() where TStartup : class;
         ICommandLineHostBuilder AllowUnexpectedArgs();
         ICommandLineHost Build();
     }

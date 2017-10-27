@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -61,10 +62,32 @@ namespace CommandLine
             return this;
         }
 
-        public ICommandLineHostBuilder UseStartup<TStartup>() where TStartup : class, IStartup
+        public ICommandLineHostBuilder UseStartup<TStartup>() where TStartup : class
         {
-            // TODO Allow convention based Startup
-            ConfigureServices(services => services.AddSingleton<IStartup, TStartup>());
+            var startupType = typeof(TStartup);
+
+            this.ConfigureServices(services =>
+            {
+                {
+                    if (typeof(IStartup).GetTypeInfo().IsAssignableFrom(startupType.GetTypeInfo()))
+                    {
+                        services.AddSingleton(typeof(IStartup), startupType);
+                    }
+                    else
+                    {
+                        services.AddSingleton(
+                            typeof(IStartup),
+                            sp => new ConventionBasedStartup(
+                                StartupLoader.LoadMethods(
+                                    sp,
+                                    startupType,
+                                    _commandLineEnvironment.EnvironmentName
+                                )
+                            )
+                        );
+                    }
+                }
+            });
 
             return this;
         }
