@@ -5,12 +5,16 @@ namespace CommandLine
 {
     public class ApplicationBuilder: IApplicationBuilder
     {
-        public ApplicationBuilder(IServiceProvider serviceProvider, CommandLineApplication commandLineApp)
+        private readonly CommandLineApplication _commandLineApp;
+
+        public ApplicationBuilder(IServiceProvider serviceProvider, CommandLineApplication commandLineApp, IApplicationBuilder parent = null)
         {
+            _commandLineApp = commandLineApp;
             ApplicationServices = serviceProvider;
+            Parent = parent;
         }
         
         public IServiceProvider ApplicationServices { get; }
-        public string Description { get; set; }
+        public IApplicationBuilder Parent { get; }
     }
 }
