@@ -3,7 +3,7 @@ using Microsoft.Extensions.CommandLineUtils;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CommandLine
+namespace DarkXaHTeP.CommandLine
 {
     public class CommandLineHost : ICommandLineHost
     {

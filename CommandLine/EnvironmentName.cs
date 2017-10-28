@@ -1,4 +1,4 @@
-﻿namespace CommandLine
+﻿namespace DarkXaHTeP.CommandLine
 {
     public static class EnvironmentName
     {

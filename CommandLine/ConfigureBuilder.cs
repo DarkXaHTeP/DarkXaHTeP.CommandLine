@@ -2,7 +2,7 @@
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CommandLine
+namespace DarkXaHTeP.CommandLine
 {
     public class ConfigureBuilder
     {

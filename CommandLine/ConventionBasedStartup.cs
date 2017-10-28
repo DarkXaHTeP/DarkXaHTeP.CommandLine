@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Runtime.ExceptionServices;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CommandLine
+namespace DarkXaHTeP.CommandLine
 {
     public class ConventionBasedStartup: IStartup
     {

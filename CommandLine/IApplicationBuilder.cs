@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.CommandLineUtils;
 
-namespace CommandLine
+namespace DarkXaHTeP.CommandLine
 {
     public interface IApplicationBuilder
     {

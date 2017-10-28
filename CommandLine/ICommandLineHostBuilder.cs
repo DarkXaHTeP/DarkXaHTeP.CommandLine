@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CommandLine
+namespace DarkXaHTeP.CommandLine
 {
     public interface ICommandLineHostBuilder
     {

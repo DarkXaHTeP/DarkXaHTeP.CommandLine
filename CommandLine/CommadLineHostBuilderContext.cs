@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace CommandLine
+namespace DarkXaHTeP.CommandLine
 {
     public class CommandLineHostBuilderContext
     {

@@ -1,9 +1,9 @@
-﻿namespace CommandLine
+﻿namespace DarkXaHTeP.CommandLine
 {
     public interface ICommandLineEnvironment
     {
-        string EnvironmentName { get; set; }
-        string ApplicationName { get; set; }
-        string ContentRootPath { get; set; }
+        string EnvironmentName { get; }
+        string ApplicationName { get; }
+        string ContentRootPath { get; }
     }
 }

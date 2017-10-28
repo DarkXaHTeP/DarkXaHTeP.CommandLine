@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace CommandLine
+namespace DarkXaHTeP.CommandLine
 {
     public interface IStartup
     {

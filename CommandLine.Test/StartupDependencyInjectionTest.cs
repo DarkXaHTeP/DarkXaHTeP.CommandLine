@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace CommandLine.Test
+namespace DarkXaHTeP.CommandLine.Test
 {
     public class ConstructorInjectionStartup
     {
