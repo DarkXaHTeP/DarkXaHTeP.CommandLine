@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DarkXaHTeP.CommandLine
+namespace DarkXaHTeP.CommandLine.Internal.Startup
 {
     public class ConfigureServicesBuilder
     {
