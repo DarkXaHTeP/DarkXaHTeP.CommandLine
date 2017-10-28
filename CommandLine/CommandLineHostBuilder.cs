@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using DarkXaHTeP.CommandLine.Internal;
+using DarkXaHTeP.CommandLine.Internal.Startup;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -144,7 +146,7 @@ namespace DarkXaHTeP.CommandLine
                 configureServices(_context, services);
             }
 
-            var host = new CommandLineHost(services, _config, _allowUnexpectedArgs);
+            var host = new CommandLineHost(services, _allowUnexpectedArgs);
             host.Initialize();
 
             return host;
