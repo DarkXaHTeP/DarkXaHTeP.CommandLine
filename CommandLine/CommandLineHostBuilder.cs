@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace CommandLine
 {
@@ -90,6 +91,16 @@ namespace CommandLine
             });
 
             return this;
+        }
+        
+        public ICommandLineHostBuilder ConfigureLogging(Action<ILoggingBuilder> configureLogging)
+        {
+            return this.ConfigureServices(collection => collection.AddLogging(configureLogging));
+        }
+        
+        public ICommandLineHostBuilder ConfigureLogging(Action<CommandLineHostBuilderContext, ILoggingBuilder> configureLogging)
+        {
+            return this.ConfigureServices((context, collection) => collection.AddLogging(builder => configureLogging(context, builder)));
         }
 
         public ICommandLineHostBuilder AllowUnexpectedArgs()
