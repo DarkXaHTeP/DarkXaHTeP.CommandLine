@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Reflection;
 
-namespace DarkXaHTeP.CommandLine
+namespace DarkXaHTeP.CommandLine.Internal
 {
     public class CommandLineEnvironment: ICommandLineEnvironment
     {

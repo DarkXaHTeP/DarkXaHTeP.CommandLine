@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.CommandLineUtils;
 
-namespace DarkXaHTeP.CommandLine
+namespace DarkXaHTeP.CommandLine.Internal
 {
     public class ApplicationBuilder: IApplicationBuilder
     {

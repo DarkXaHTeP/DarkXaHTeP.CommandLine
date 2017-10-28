@@ -1,24 +1,21 @@
 ﻿using System;
 using Microsoft.Extensions.CommandLineUtils;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DarkXaHTeP.CommandLine
+namespace DarkXaHTeP.CommandLine.Internal
 {
     public class CommandLineHost : ICommandLineHost
     {
         private readonly ServiceCollection _services;
-        private readonly IConfiguration _config;
         private readonly bool _allowUnexpectedArgs;
         private readonly ServiceProvider _serviceProvider;
         private IStartup _startup;
         private CommandLineApplication _commandLineApp;
 
-        public CommandLineHost(ServiceCollection services, IConfiguration config, bool allowUnexpectedArgs)
+        public CommandLineHost(ServiceCollection services, bool allowUnexpectedArgs)
         {
             _services = services;
             _serviceProvider = services.BuildServiceProvider();
-            _config = config;
             _allowUnexpectedArgs = allowUnexpectedArgs;
         }
 
