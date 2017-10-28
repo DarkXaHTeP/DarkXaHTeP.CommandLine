@@ -1,0 +1,18 @@
+sudo: required
+services:
+- docker
+language: bash
+install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
+  - docker -v
+script:
+  - docker build -t darkxahtep/commandline:latest --build-arg NUGET_SOURCE=$NUGET_SOURCE --build-arg NUGET_USERNAME=$NUGET_USERNAME --build-arg NUGET_API_KEY=$NUGET_API_KEY .
+  - docker run -it --rm darkxahtep/commandline ./test.sh
+after_success:
+  - if [ "$TRAVIS_TAG" != "" ];
+    then docker run -it --rm darkxahtep/commandline ./publish.sh;
+    else echo "Skipping deployment for not tagged commits";
+    fi
