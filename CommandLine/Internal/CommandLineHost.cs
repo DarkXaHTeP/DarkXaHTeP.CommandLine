@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DarkXaHTeP.CommandLine.Internal
 {
-    public class CommandLineHost : ICommandLineHost
+    internal class CommandLineHost : ICommandLineHost
     {
         private readonly ServiceCollection _services;
         private readonly bool _allowUnexpectedArgs;

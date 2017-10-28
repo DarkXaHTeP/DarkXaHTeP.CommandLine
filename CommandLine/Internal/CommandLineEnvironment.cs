@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace DarkXaHTeP.CommandLine.Internal
 {
-    public class CommandLineEnvironment: ICommandLineEnvironment
+    internal class CommandLineEnvironment: ICommandLineEnvironment
     {
         public CommandLineEnvironment(string environment)
         {

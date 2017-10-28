@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DarkXaHTeP.CommandLine.Internal.Startup
 {
-    public class ConventionBasedStartup: IStartup
+    internal class ConventionBasedStartup: IStartup
     {
         private readonly StartupMethods _methods;
 

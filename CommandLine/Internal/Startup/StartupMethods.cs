@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DarkXaHTeP.CommandLine.Internal.Startup
 {
-    public class StartupMethods
+    internal class StartupMethods
     {
         public StartupMethods(object instance, Action<IApplicationBuilder> configure, Action<IServiceCollection> configureServices)
         {

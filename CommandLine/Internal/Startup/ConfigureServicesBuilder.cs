@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DarkXaHTeP.CommandLine.Internal.Startup
 {
-    public class ConfigureServicesBuilder
+    internal class ConfigureServicesBuilder
     {
         public ConfigureServicesBuilder(MethodInfo configureServices)
         {

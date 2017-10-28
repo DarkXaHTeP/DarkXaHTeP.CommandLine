@@ -4,7 +4,7 @@ using Microsoft.Extensions.CommandLineUtils;
 
 namespace DarkXaHTeP.CommandLine.Internal
 {
-    public class ApplicationBuilder: IApplicationBuilder
+    internal class ApplicationBuilder: IApplicationBuilder
     {
         private readonly CommandLineApplication _commandLineApp;
 

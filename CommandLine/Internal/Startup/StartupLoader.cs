@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DarkXaHTeP.CommandLine.Internal.Startup
 {
-    public static class StartupLoader
+    internal static class StartupLoader
     {
         public static StartupMethods LoadMethods(IServiceProvider hostingServiceProvider, Type startupType,
             string environmentName)
