@@ -15,7 +15,7 @@ namespace DarkXaHTeP.CommandLine
         private readonly List<Action<CommandLineHostBuilderContext, IServiceCollection>> _configureServicesDelegates;
         private bool _commandLineHostBuilt = false;
         private readonly IConfiguration _config;
-        private readonly ICommandLineEnvironment _commandLineEnvironment;
+        private readonly CommandLineEnvironment _commandLineEnvironment;
         private readonly CommandLineHostBuilderContext _context;
         private bool _allowUnexpectedArgs = false;
 
@@ -103,6 +103,13 @@ namespace DarkXaHTeP.CommandLine
         public ICommandLineHostBuilder ConfigureLogging(Action<CommandLineHostBuilderContext, ILoggingBuilder> configureLogging)
         {
             return ConfigureServices((context, collection) => collection.AddLogging(builder => configureLogging(context, builder)));
+        }
+
+        public ICommandLineHostBuilder UseContentRoot(string contentRoot)
+        {
+            _commandLineEnvironment.ContentRootPath = contentRoot;
+
+            return this;
         }
 
         public ICommandLineHostBuilder AllowUnexpectedArgs()

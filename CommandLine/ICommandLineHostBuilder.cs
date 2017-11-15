@@ -13,6 +13,7 @@ namespace DarkXaHTeP.CommandLine
         ICommandLineHostBuilder ConfigureServices(Action<CommandLineHostBuilderContext, IServiceCollection> configureServices);
         ICommandLineHostBuilder ConfigureLogging(Action<ILoggingBuilder> configureLogging);
         ICommandLineHostBuilder ConfigureLogging(Action<CommandLineHostBuilderContext, ILoggingBuilder> configureLogging);
+        ICommandLineHostBuilder UseContentRoot(string contentRoot);
         ICommandLineHostBuilder UseStartup<TStartup>() where TStartup : class;
         ICommandLineHostBuilder AllowUnexpectedArgs();
         ICommandLineHost Build();
