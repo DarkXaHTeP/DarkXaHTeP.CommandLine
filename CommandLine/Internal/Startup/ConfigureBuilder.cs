@@ -1,4 +1,11 @@
-﻿using System;
+﻿// This file is a modified version of ConfigureBuilder.cs.cs from aspnet/Hosting GitHub repository
+// located at https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/ConfigureBuilder.cs
+// and licensed under the Apache License, Version 2.0
+// Copyright (c) .NET Foundation. All rights reserved.
+
+// Modification notice: Changed namespace and usings
+
+using System;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
