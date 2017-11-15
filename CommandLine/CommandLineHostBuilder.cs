@@ -29,7 +29,6 @@ namespace DarkXaHTeP.CommandLine
             
             _commandLineEnvironment = new CommandLineEnvironment(_config["COMMANDLINE_ENVIRONMENT"]);
 
-
             _context = new CommandLineHostBuilderContext
             {
                 CommandLineEnvironment = _commandLineEnvironment,
