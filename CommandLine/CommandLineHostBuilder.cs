@@ -69,7 +69,7 @@ namespace DarkXaHTeP.CommandLine
         {
             var startupType = typeof(TStartup);
 
-            this.ConfigureServices(services =>
+            ConfigureServices(services =>
             {
                 {
                     if (typeof(IStartup).GetTypeInfo().IsAssignableFrom(startupType.GetTypeInfo()))
@@ -97,12 +97,12 @@ namespace DarkXaHTeP.CommandLine
         
         public ICommandLineHostBuilder ConfigureLogging(Action<ILoggingBuilder> configureLogging)
         {
-            return this.ConfigureServices(collection => collection.AddLogging(configureLogging));
+            return ConfigureServices(collection => collection.AddLogging(configureLogging));
         }
         
         public ICommandLineHostBuilder ConfigureLogging(Action<CommandLineHostBuilderContext, ILoggingBuilder> configureLogging)
         {
-            return this.ConfigureServices((context, collection) => collection.AddLogging(builder => configureLogging(context, builder)));
+            return ConfigureServices((context, collection) => collection.AddLogging(builder => configureLogging(context, builder)));
         }
 
         public ICommandLineHostBuilder AllowUnexpectedArgs()
