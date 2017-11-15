@@ -129,7 +129,7 @@ namespace DarkXaHTeP.CommandLine
             _commandLineHostBuilt = true;
             
             var services = new ServiceCollection();
-            services.AddSingleton(_commandLineEnvironment);
+            services.AddSingleton<ICommandLineEnvironment>(_commandLineEnvironment);
             services.AddSingleton(_context);
             
             var builder = new ConfigurationBuilder()
