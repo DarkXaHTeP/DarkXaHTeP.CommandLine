@@ -19,7 +19,6 @@ namespace DarkXaHTeP.CommandLine.Internal
 
             ApplicationName = Assembly.GetEntryAssembly()?.GetName().Name;
 
-            // TODO Add ability to override content root
             ContentRootPath = Directory.GetCurrentDirectory();
         }
 
