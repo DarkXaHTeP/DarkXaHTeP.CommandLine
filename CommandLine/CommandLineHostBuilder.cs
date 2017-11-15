@@ -13,11 +13,11 @@ namespace DarkXaHTeP.CommandLine
     {
         private readonly List<Action<CommandLineHostBuilderContext, IConfigurationBuilder>> _configureAppConfigurationBuilderDelegates;
         private readonly List<Action<CommandLineHostBuilderContext, IServiceCollection>> _configureServicesDelegates;
-        private bool _commandLineHostBuilt = false;
+        private bool _commandLineHostBuilt;
         private readonly IConfiguration _config;
         private readonly CommandLineEnvironment _commandLineEnvironment;
         private readonly CommandLineHostBuilderContext _context;
-        private bool _allowUnexpectedArgs = false;
+        private bool _allowUnexpectedArgs;
 
         public CommandLineHostBuilder()
         {
