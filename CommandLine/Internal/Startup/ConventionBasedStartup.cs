@@ -1,4 +1,11 @@
-﻿using System;
+﻿// This file is a modified version of ConventionBasedStartup.cs from aspnet/Hosting GitHub repository
+// located at https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Startup/ConventionBasedStartup.cs
+// and licensed under the Apache License, Version 2.0
+// Copyright (c) .NET Foundation. All rights reserved.
+
+// Modification notice: Changed namespace and "ConfigureServices" method signature
+
+using System;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using Microsoft.Extensions.DependencyInjection;
