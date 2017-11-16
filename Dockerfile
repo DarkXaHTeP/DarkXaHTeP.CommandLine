@@ -10,5 +10,4 @@ COPY . ./
 
 RUN dotnet restore
 
-RUN chmod +x ./test.sh
-RUN chmod +x ./publish.sh
+RUN chmod +x ./test.sh ./publish.sh
