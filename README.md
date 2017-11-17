@@ -15,3 +15,29 @@ Allows creating CommandLine applications using Microsoft.Extensions.CommandLineU
 ## Usage
 
 TBD
+
+## Startup class
+
+TBD
+
+## IApplicationBuilder interface
+
+TBD
+
+## App Configuration and Logging
+
+TBD
+
+## Dependency Injection
+
+TBD
+
+## Aknowledgments
+
+TBD
+
+## Contribution
+
+Feel free to ask questions and post bugs/ideas in the issues, as well as send pull requests.
+
+[![License](https://img.shields.io/github/license/darkxahtep/DarkXaHTeP.CommandLine.svg)](https://github.com/DarkXaHTeP/DarkXaHTeP.CommandLine/blob/master/LICENSE)
