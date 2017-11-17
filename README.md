@@ -32,7 +32,7 @@ TBD
 
 TBD
 
-## Aknowledgments
+## Acknowledgements
 
 TBD
 
