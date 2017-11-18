@@ -62,7 +62,45 @@ by providing access to application's IServiceCollection. This method is invoked 
 
 ## IApplicationBuilder interface
 
-TBD
+This interface provides a set of methods for configuring application. These methods are similar to provided by
+Microsoft.Extensions.CommandLineUtils (actually this library uses CommandLineUtils internally,
+however this may change in future due to the fact that CommandLineUtils is no longer supported).
+
+```c#
+IServiceProvider ApplicationServices { get; }
+```
+gives access to services registered in application
+
+```c#
+IApplicationBuilder Parent { get; }`
+```
+contains link to parent IApplicationBuilder. Is null for the root builder
+
+```c#
+CommandArgument Argument(string name, string description, bool multipleValues = false);`
+```
+allows to define command argument
+
+```c#
+IApplicationBuilder Command (string name, Action<IApplicationBuilder> configure, bool throwOnUnexpectedArg = true);`
+```
+allows to define command
+
+```c#
+void OnExecute (Func<System.Threading.Tasks.Task<int>> invoke);
+void OnExecute (Func<int> invoke);
+```
+allows to define root or command execution callback
+
+```c#
+CommandOption Option (string template, string description, CommandOptionType optionType);
+```
+allows to defile option
+
+```c#
+void ShowHelp (string commandName = null);
+```
+shows help for the particular command or a whole app. Could be used in execute callbacks
 
 ## CommandLineHostBuilder class
 
