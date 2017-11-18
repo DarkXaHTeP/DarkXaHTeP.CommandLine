@@ -34,7 +34,7 @@ TBD
 
 ## Acknowledgements
 
-This library is highly inspired by [AspNet.Core Hosting](https://github.com/aspnet/Hosting/tree/rel/2.0.0) 
+This library is highly inspired by [AspNet.Core Hosting](https://github.com/aspnet/Hosting/tree/rel/2.0.0) from Microsoft
 
 ## Contribution
 
