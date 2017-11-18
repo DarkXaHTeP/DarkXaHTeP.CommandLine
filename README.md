@@ -95,7 +95,7 @@ allows to define root or command execution callback
 ```c#
 CommandOption Option (string template, string description, CommandOptionType optionType);
 ```
-allows to defile option
+allows to define option
 
 ```c#
 void ShowHelp (string commandName = null);
