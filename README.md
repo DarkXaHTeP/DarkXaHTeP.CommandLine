@@ -54,7 +54,10 @@ The application will print "Hello World" to console output and exit with 0 code.
 
 Same as Asp.Net Core Startup, CommandLine Startup can have two methods:
 
-`void ConfigureServices(IServiceCollection services)` is optional. llows configuring Dependency Injection
+`void Configure(IApplicationBuilder app)` is required. This is where application
+arguments and commands configuration happens using IApplicationBuilder.
+
+`void ConfigureServices(IServiceCollection services)` is optional. Allows configuring Dependency Injection
 by providing access to application's IServiceCollection. This method is invoked prior to `Configure`
 
 ## IApplicationBuilder interface
