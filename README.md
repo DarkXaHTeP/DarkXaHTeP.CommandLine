@@ -12,7 +12,7 @@ Allows creating CommandLine applications using Microsoft.Extensions.CommandLineU
 [![Travis build](https://img.shields.io/travis/DarkXaHTeP/DarkXaHTeP.CommandLine/master.svg)](https://travis-ci.org/DarkXaHTeP/DarkXaHTeP.CommandLine)
 [![Coverage report](https://img.shields.io/coveralls/github/DarkXaHTeP/DarkXaHTeP.CommandLine.svg)](https://coveralls.io/github/DarkXaHTeP/DarkXaHTeP.CommandLine)
 
-## Usage
+## Getting Started
 
 To use the library you need to go through 2 simple steps:
 
