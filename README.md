@@ -72,17 +72,17 @@ IServiceProvider ApplicationServices { get; }
 gives access to services registered in application
 
 ```c#
-IApplicationBuilder Parent { get; }`
+IApplicationBuilder Parent { get; }
 ```
 contains link to parent IApplicationBuilder. Is null for the root builder
 
 ```c#
-CommandArgument Argument(string name, string description, bool multipleValues = false);`
+CommandArgument Argument(string name, string description, bool multipleValues = false);
 ```
 allows to define command argument
 
 ```c#
-IApplicationBuilder Command (string name, Action<IApplicationBuilder> configure, bool throwOnUnexpectedArg = true);`
+IApplicationBuilder Command (string name, Action<IApplicationBuilder> configure, bool throwOnUnexpectedArg = true);
 ```
 allows to define command
 
