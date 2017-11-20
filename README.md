@@ -21,9 +21,9 @@ Define Startup class similar to Asp.Net Core:
 ```c#
 public class Startup
 {   
-    public void Configure(IApplicationBuilder builder)
+    public void Configure(IApplicationBuilder app)
     {
-        builder.OnExecute(async () =>
+        app.OnExecute(async () =>
         {
             Console.WriteLine("Hello World")
             return 0;
@@ -42,7 +42,7 @@ static class Program
         ICommandLineHost host = new CommandLineHostBuilder()
             .UseStartup<Startup>()
             .Build();
-
+            
         return host.Run(args);
     }
 }
