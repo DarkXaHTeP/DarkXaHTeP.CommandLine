@@ -102,6 +102,31 @@ void ShowHelp (string commandName = null);
 ```
 shows help for the particular command or a whole app. Could be used in execute callbacks
 
+#### Example:
+```c#
+var greeter = app.ApplicationServices.GetRequiredService<IGreeter>();
+ 
+app.OnExecute(() => {
+    app.ShowHelp();
+    return 0;
+});
+ 
+app.Command("greet", command => {
+    var casualOption = command.Option("-c|--casual", "This greeting is informal/casual", CommandOptionType.NoValue);
+    var nameArgument = command.Argument("<name1 name2>", "Names of persons to greet separated with space", true);
+    
+    command.OnExecute(async () => {
+        string names = nameArgument.Values;
+        bool isCasual = casualOption.HasValue();
+        
+        string greeting = await greeter.GetGreetingAsync(isCasual);
+        greeter.GreetAll(greeting, names);
+        
+        return 0;
+    });
+});
+```
+
 ## CommandLineHostBuilder class
 
 TBD
