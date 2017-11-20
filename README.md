@@ -129,7 +129,46 @@ app.Command("greet", command => {
 
 ## CommandLineHostBuilder class
 
-TBD
+This class is similar to `WebHostBuilder` from Asp.Net Core and allows to setup application configuration,
+logging and arguments parsing strategy before execution.
+
+```c#
+ICommandLineHostBuilder ConfigureAppConfiguration(Action<IConfigurationBuilder> configureDelegate);
+ICommandLineHostBuilder ConfigureAppConfiguration(Action<CommandLineHostBuilderContext, IConfigurationBuilder> configureDelegate);
+```
+allows to configure application configuration
+
+```c#
+ICommandLineHostBuilder ConfigureLogging(Action<ILoggingBuilder> configureLogging);
+ICommandLineHostBuilder ConfigureLogging(Action<CommandLineHostBuilderContext, ILoggingBuilder> configureLogging);
+```
+allows to configure logging
+
+```c#
+ICommandLineHostBuilder UseContentRoot(string contentRoot);
+```
+allows to redefine content root that will be used for resolving relative paths (e.g. path to json configuration file if used)
+
+```c#
+ICommandLineHostBuilder UseStartup<TStartup>() where TStartup : class;
+```
+sets Startup class to use. This method is required to call because no automatic Startup discovery is implemented
+
+```c#
+ICommandLineHostBuilder AllowUnexpectedArgs();
+```
+changes argument parsing to be less strict and not throw on unexpected arguments
+
+```c#
+ICommandLineHost Build();
+```
+builds command line host
+
+```c#
+ICommandLineHostBuilder ConfigureServices(Action<IServiceCollection> configureServices);
+ICommandLineHostBuilder ConfigureServices(Action<CommandLineHostBuilderContext, IServiceCollection> configureServices);
+```
+allows to define additional services. Could be used in extension methods to extend behaviour
 
 ## Dependency Injection
 
