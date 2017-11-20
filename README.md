@@ -170,6 +170,36 @@ ICommandLineHostBuilder ConfigureServices(Action<CommandLineHostBuilderContext, 
 ```
 allows to define additional services. Could be used in extension methods to extend behaviour
 
+#### Example:
+```c#
+static class Program
+{
+    static int Main(string[] args)
+    {
+        ICommandLineHost host = new CommandLineHostBuilder()
+            .UseContentRoot(Directory.GetCurrentDirectory())
+            .ConfigureLogging(logging =>
+            {
+                logging
+                    .AddConsole()
+                    .AddDebug();
+            })
+            .ConfigureAppConfiguration(config =>
+            {
+                config
+                    .AddJsonFile("appsettings.json")
+                    .AddConsul("application")
+                    .AddEnvironmentVariables();
+            })
+            .UseStartup<Startup>()
+            .AllowUnexpectedArgs()
+            .Build();
+
+        return host.Run(args);
+    }
+}
+```
+
 ## Dependency Injection
 
 TBD
