@@ -206,6 +206,27 @@ It is possible to inject dependencies either through constructor of `Startup` cl
 however only built-in dependencies (`IConfiguration`, `ICommandLineEnvironment`, `ILogger<>` etc.) are available through constructor
 because `ConfigureServices` method is not yet called.
 
+#### Example:
+```c#
+public class Startup
+{   
+    public Startup(
+        IConfiguration config,
+        ICommandLineEnvironment environment,
+        ILogger<Startup> logger
+    )
+    {}
+    
+    public void Configure(IApplicationBuilder app, IMyService service)
+    {
+    }
+    
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddSingleton<IMyService, MyService>();
+    }
+}
+```
 
 ## Acknowledgements
 
