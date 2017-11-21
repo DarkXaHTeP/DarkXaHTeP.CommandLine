@@ -202,7 +202,10 @@ static class Program
 
 ## Dependency Injection
 
-TBD
+It is possible to inject dependencies either through constructor of `Startup` class or `Configure` method,
+however only built-in dependencies (`IConfiguration`, `ICommandLineEnvironment`, `ILogger<>` etc.) are available through constructor
+because `ConfigureServices` method is not yet called.
+
 
 ## Acknowledgements
 
