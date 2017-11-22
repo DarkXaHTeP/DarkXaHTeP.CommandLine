@@ -57,9 +57,6 @@ namespace DarkXaHTeP.CommandLine.Internal
             return _commandOption.HasValue();
         }
 
-        public string Value()
-        {
-            return _commandOption.Value();
-        }
+        public string Value => _commandOption.Value();
     }
 }

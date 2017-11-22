@@ -22,6 +22,6 @@ namespace DarkXaHTeP.CommandLine
         
         bool HasValue();
         
-        string Value();
+        string Value { get; }
     }
 }
