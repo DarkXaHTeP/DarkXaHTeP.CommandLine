@@ -11,7 +11,7 @@ namespace DarkXaHTeP.CommandLine
         IApplicationBuilder Command (string name, Action<IApplicationBuilder> configure, bool throwOnUnexpectedArg = true);
         void OnExecute (Func<System.Threading.Tasks.Task<int>> invoke);
         void OnExecute (Func<int> invoke);
-        CommandOption Option (string template, string description, CommandOptionType optionType);
+        ICommandOption Option (string template, string description, CommandLineOptionType optionType);
         void ShowHelp (string commandName = null);
     }
 }

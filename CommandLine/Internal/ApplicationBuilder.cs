@@ -45,9 +45,9 @@ namespace DarkXaHTeP.CommandLine.Internal
             _commandLineApp.OnExecute(invoke);
         }
 
-        public CommandOption Option(string template, string description, CommandOptionType optionType)
+        public ICommandOption Option(string template, string description, CommandLineOptionType optionType)
         {
-            return _commandLineApp.Option(template, description, optionType);
+            return new CommandLineOption(_commandLineApp.Option(template, description, optionType.ToCommandOptionType()));
         }
 
         public void ShowHelp(string commandName = null)
