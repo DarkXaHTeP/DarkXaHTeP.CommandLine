@@ -18,9 +18,9 @@ namespace DarkXaHTeP.CommandLine.Internal
         public IServiceProvider ApplicationServices { get; }
         public IApplicationBuilder Parent { get; }
 
-        public CommandArgument Argument(string name, string description, bool multipleValues = false)
+        public ICommandArgument Argument(string name, string description, bool multipleValues = false)
         {
-            return _commandLineApp.Argument(name, description, multipleValues);
+            return new CommandLineArgument(_commandLineApp.Argument(name, description, multipleValues));
         }
 
         public IApplicationBuilder Command(
