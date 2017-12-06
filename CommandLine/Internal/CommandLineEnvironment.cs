@@ -25,5 +25,19 @@ namespace DarkXaHTeP.CommandLine.Internal
         public string EnvironmentName { get; set; }
         public string ApplicationName { get; set; }
         public string ContentRootPath { get; set; }
+        public bool IsDevelopment()
+        {
+            return EnvironmentName == CommandLine.EnvironmentName.Development;
+        }
+
+        public bool IsStaging()
+        {
+            return EnvironmentName == CommandLine.EnvironmentName.Staging;
+        }
+
+        public bool IsProduction()
+        {
+            return EnvironmentName == CommandLine.EnvironmentName.Production;
+        }
     }
 }
