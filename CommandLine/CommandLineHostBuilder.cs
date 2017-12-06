@@ -27,7 +27,7 @@ namespace DarkXaHTeP.CommandLine
                 .AddEnvironmentVariables(prefix: "COMMANDLINE_")
                 .Build();
             
-            _commandLineEnvironment = new CommandLineEnvironment(_config["COMMANDLINE_ENVIRONMENT"]);
+            _commandLineEnvironment = new CommandLineEnvironment(_config["ENVIRONMENT"]);
 
             _context = new CommandLineHostBuilderContext
             {
