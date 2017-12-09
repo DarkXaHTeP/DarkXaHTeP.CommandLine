@@ -50,6 +50,10 @@ static class Program
 
 The application will print "Hello World" to console output and exit with 0 code.
 
+## Release notes
+
+For release notes please see [CHANGELOG.md](https://github.com/DarkXaHTeP/DarkXaHTeP.CommandLine/blob/master/CHANGELOG.md)
+
 ## Startup class
 
 Same as Asp.Net Core Startup, CommandLine Startup can have two methods:
